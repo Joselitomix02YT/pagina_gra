@@ -141,7 +141,7 @@ def api_analizar():
 
 if __name__ == '__main__':
     print("\n✅ Abriendo en http://localhost:5000\n")
-    puerto = int(os.environ.get("PORT", 5000))
+    puerto = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=puerto)
 
     while True:
