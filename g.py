@@ -8,6 +8,8 @@ from flask import Flask, jsonify
 import warnings
 warnings.filterwarnings('ignore')
 import time
+import os  # <--- AGREGA ESTA LÍNEA AQUÍ ARRIBA
+from flask import Flask
 
 app = Flask(__name__)
 plt.rcParams['font.family'] = 'Arial'
@@ -140,8 +142,6 @@ def api_analizar():
 if __name__ == '__main__':
     print("\n✅ Abriendo en http://localhost:5000\n")
     puerto = int(os.environ.get("PORT", 5000))
-    
-    # '0.0.0.0' le dice a Flask que sea visible externamente
     app.run(host="0.0.0.0", port=puerto)
 
     while True:
