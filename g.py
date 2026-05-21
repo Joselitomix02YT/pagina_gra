@@ -7,6 +7,7 @@ from io import BytesIO
 from flask import Flask, jsonify
 import warnings
 warnings.filterwarnings('ignore')
+import time
 
 app = Flask(__name__)
 plt.rcParams['font.family'] = 'Arial'
@@ -139,3 +140,6 @@ def api_analizar():
 if __name__ == '__main__':
     print("\n✅ Abriendo en http://localhost:5000\n")
     app.run(debug=False, port=5000)
+
+    while True:
+     time.sleep(3600)
