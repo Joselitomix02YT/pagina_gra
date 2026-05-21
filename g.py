@@ -139,7 +139,10 @@ def api_analizar():
 
 if __name__ == '__main__':
     print("\n✅ Abriendo en http://localhost:5000\n")
-    app.run(debug=False, port=5000)
+    puerto = int(os.environ.get("PORT", 5000))
+    
+    # '0.0.0.0' le dice a Flask que sea visible externamente
+    app.run(host="0.0.0.0", port=puerto)
 
     while True:
      time.sleep(3600)
